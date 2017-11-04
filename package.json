@@ -16,6 +16,8 @@
     "bufferutil": "3.0.3",
     "express": "4.16.2",
     "moment": "^2.19.1",
+    "pg": "^7.4.0",
+    "pg-format": "^1.0.4",
     "socket.io": "^2.0.4",
     "utf-8-validate": "3.0.4"
   }
