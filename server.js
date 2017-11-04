@@ -1,6 +1,8 @@
 const io = require('socket.io')();
+const moment = require('moment');
 
 const PORT = process.env.PORT || 8000;
+moment().format();
 
 io.on('connection', (client) => {
   // this is where you emitt events to the client
@@ -9,7 +11,7 @@ io.on('connection', (client) => {
     console.log('client is subscribing to timer with interval', interval);
     setInterval( () => { 
       // when timer fires (at interval of clients choosing), emit event.
-      client.emit('timer', new Date()); // first argument of emit is name of event, second is the content
+      client.emit('timer', moment()); // first argument of emit is name of event, second is the content
     }, interval)
   })
 })
